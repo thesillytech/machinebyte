@@ -3,12 +3,18 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Header from '../components/header'
+import Box from '@mui/material/Box'
+
  
 const name = 'BoBo';
 export const siteTitle = 'Next.js Sample Website';
  
 export default function Layout({ children, home }) {
   return (
+    <Box>
+    <Header />
+
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
@@ -65,5 +71,6 @@ export default function Layout({ children, home }) {
         </div>
       )}
     </div>
+    </Box>
   );
 }
