@@ -3,20 +3,74 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import { Toolbar } from '@mui/material';
+import { ListIcon } from "@phosphor-icons/react";
+import Link from 'next/link'
 
 const header = () => {
+
+    const [anchorEl, setAnchorEl] = React.useState(null)
+    const open = Boolean(anchorEl)
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    }
+    const handleClose = () => {
+        setAnchorEl(null);
+    }
+
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={css.appbar}>
+        <>
+            {/* Desktop Menu */}
+            <Box sx={{ flexGrow: 1 }}>
+                <AppBar position="static" sx={css.appbar}>
+                    <Toolbar>
+                        <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/>
+                        <Box sx={{ flexGrow: 1 }}></Box>
+                        <Link href="/recipes"><Button color="inherit" sx={css.headerLinks}>Recipes</Button></Link>
+                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>About</Button></Link>
+                        <Link href="/socials"><Button color="inherit" sx={css.headerLinks}>Socials</Button></Link>
+                    </Toolbar>
+                </AppBar>
+            </Box>
+
+            {/* Burger Menu for Mobile View */}
+            <Box sx={css.burgerMenu}>
                 <Toolbar>
-                    <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/>
-                    <Box sx={{ flexGrow: 1 }}></Box>
-                    <Button color="inherit" sx={css.headerLinks}>Recipes</Button>
-                    <Button color="inherit" sx={css.headerLinks}>About</Button>
+                <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/>
+
+                <Box sx={{ flexGrow: 1 }}></Box>
+
+                <Button
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                >
+                    <ListIcon size={50} color="#E2E8F0" />
+                </Button>
+                <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    sx={css.burgerIcon}
+                    slotProps={{
+                    list: {
+                        'aria-labelledby': 'basic-button',
+                    },
+                    }}
+                >
+                    <Link href="/recipes"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Recipes</MenuItem></Link>
+                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>About</MenuItem></Link>
+                    <Link href="/socials"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Socials</MenuItem></Link>
+                </Menu>
                 </Toolbar>
-            </AppBar>
-        </Box>
+            </Box>
+        </>
     )
 }
 
@@ -26,7 +80,10 @@ const css = {
     appbar: {
         background: 'rgb(11 30 71)',
         color: '#E2E8F0',
-        padding: '10px'
+        padding: '10px',
+        '@media screen and (max-width:768px)': { 
+            display: 'none'
+        }
     }, 
 
     logo: {
@@ -35,6 +92,31 @@ const css = {
     },
 
     headerLinks: {
-        fontSize: '20px'
+        fontSize: '20px',
+        textTransform: 'none',
+        marginRight: '30px',
+        '& .hover': {
+            color: 'yellow'
+        }
+    }, 
+
+    burgerIcon: {
+        '& .MuiList-root': {
+            width: '100vw',
+            background: '#E2E8F0',
+            color: 'rgb(11 30 71)',
+        }
+    },
+
+    burgerMenu: {
+        display: 'none',
+        background: 'rgb(11 30 71)',
+        color: '#E2E8F0',
+        padding: '10px',
+        '@media screen and (max-width:768px)': { 
+            display: 'block'
+        }
     }
 }
+
+    
