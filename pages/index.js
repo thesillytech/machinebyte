@@ -1,18 +1,32 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import Header from '../components/header'
-import styles from '../components/layout.module.css';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Image from 'next/image';
 
 export default function Home({ allPostsData }) {
   return (
-    <>
+    <Container sx={css.Container}>
+    
     <Header />
-    <div className={styles.container}>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+    {/* Latest Recipe Banner */}
+    <Grid container spacing={2}>
+      <Grid size={12}>
+        <Image
+          src="/images/placeholder_banner.jpg"
+          width={1200}
+          height={500}
+          alt="Picture of the author"
+        />
+      </Grid>
+    </Grid>
+
+    {/* <div className={styles.container}>
+
+      <section sx={css.headingMd}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -26,8 +40,8 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-      </div>
-    </>
+      </div> */}
+    </Container>
   );
 }
 
@@ -38,4 +52,24 @@ export async function getStaticProps() {
       allPostsData,
     },
   };
+}
+
+const css = {
+  Container: {
+    '&.MuiContainer-root': {
+      padding: 0,
+      margin: 0,
+      maxWidth: 'xl'
+    }
+  },
+
+  headingMd: {
+    fontSize: '1.2rem',
+    lineHeight: '1.5',
+    paddingTop: '1px'
+  },
+
+  padding1px: {
+    paddingTop: '1px'
+  }
 }
