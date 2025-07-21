@@ -2,9 +2,9 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import Header from '../components/header'
+import LastetRecipes from '../components/latest-recipes'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Image from 'next/image';
 
 export default function Home({ allPostsData }) {
   return (
@@ -14,15 +14,15 @@ export default function Home({ allPostsData }) {
 
     {/* Latest Recipe Banner */}
     <Grid container spacing={2}>
-      <Grid size={12}>
-        <Image
-          src="/images/placeholder_banner.jpg"
-          width={1200}
-          height={500}
-          alt="Picture of the author"
-        />
+      <Grid sx={css.mainBanner} size={12}>
+        <img src="/images/placeholder_banner.jpg" alt="banner" style={css.banner}></img>
       </Grid>
     </Grid>
+
+    {/* Latest Recipe Cards */}
+
+    <LastetRecipes />
+
 
     {/* <div className={styles.container}>
 
@@ -61,6 +61,20 @@ const css = {
       margin: 0,
       maxWidth: 'xl'
     }
+  },
+
+  mainBanner: {
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'center',
+    margin: '30px',
+    height: '40vh',
+    overflow: 'hidden'
+  },
+
+  banner: {
+    objectFit: 'cover',
+    width: '1200px'
   },
 
   headingMd: {
