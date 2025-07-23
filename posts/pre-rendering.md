@@ -1,5 +1,6 @@
 ---
 title: 'Two Forms of Pre-rendering'
+img: 'pan.jpg'
 date: '2020-01-01'
 ---
  

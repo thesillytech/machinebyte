@@ -21,7 +21,7 @@ export default function Home({ allPostsData }) {
 
     {/* Latest Recipe Cards */}
 
-    <LastetRecipes />
+    <LastetRecipes posts={allPostsData} />
 
 
     {/* <div className={styles.container}>
