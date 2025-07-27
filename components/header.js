@@ -78,7 +78,7 @@ export default header
 
 const css = {
     appbar: {
-        background: 'rgb(11 30 71)',
+        background: '#0B1E47',
         color: '#E2E8F0',
         padding: '10px',
         '@media screen and (max-width:768px)': { 
@@ -104,13 +104,13 @@ const css = {
         '& .MuiList-root': {
             width: '100vw',
             background: '#E2E8F0',
-            color: 'rgb(11 30 71)',
+            color: '#0B1E47',
         }
     },
 
     burgerMenu: {
         display: 'none',
-        background: 'rgb(11 30 71)',
+        background: '#0B1E47',
         color: '#E2E8F0',
         padding: '10px',
         '@media screen and (max-width:768px)': { 

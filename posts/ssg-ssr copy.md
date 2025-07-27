@@ -1,5 +1,5 @@
 ---
-title: 'Butter Chicken'
+title: 'Avocado Toast'
 img: 'bowl.webp'
 date: '2020-01-02'
 ---

@@ -1,5 +1,5 @@
 ---
-title: 'Chicken Biryani'
+title: 'Chicken Fried Rice'
 img: 'pan.jpg'
 date: '2020-01-01'
 ---

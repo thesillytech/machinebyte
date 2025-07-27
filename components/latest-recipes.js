@@ -12,9 +12,6 @@ import Button from '@mui/material/Button';
 const latestRecipe = ({ posts }) => {
 
     const getLastestPosts = posts.slice(0,4)
-
-    console.log('DATA', getLastestPosts)
-
     return (
         <>
             <Box sx={css.headers}>
@@ -23,18 +20,17 @@ const latestRecipe = ({ posts }) => {
             </Box>
 
             <Grid container spacing={3} sx={css.recipeCards}>
-
                 {getLastestPosts.map((post) => (
                     <Grid key={post.id} size={{ xs: 12, sm:6, md: 4, lg: 3 }}>
-                        <Card sx={css.card}>
+                        <Card>
                             <CardMedia
                                 sx={css.cardImage}
                                 image={`/images/recipe-cards/${post.img}`}
                                 title="green iguana"
                             />
                             <CardContent sx={{ background: '#222' }}>
-                                <Typography gutterBottom variant="h5" component="div" sx={css.cardText}>
-                                    {post.title} {post.img}
+                                <Typography variant="h5" component="div" sx={css.cardText}>
+                                    {post.title} 
                                 </Typography>
                             </CardContent>
                         </Card>
@@ -59,15 +55,17 @@ const css = {
 
     text: {
         marginTop: '5px',
-        fontSize: '42px',
+        fontSize: '60px',
         fontWeight: '500',
         fontFamily: 'Comic Neue, Roboto',
+        color: ''
     }, 
 
     recipeCards: {
         margin: '20px 50px 20px 50px',
         rowGap: '20px',
         columnGap: '20px',
+        justifyContent: 'center'
     },
 
     cardImage: {
@@ -81,5 +79,4 @@ const css = {
         fontSize: '24px',
         textAlign: 'center'
     }
-
 }

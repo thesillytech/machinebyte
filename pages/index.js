@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import Header from '../components/header'
 import LastetRecipes from '../components/latest-recipes'
+import AllRecipes from '../components/all-recipes';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
@@ -20,9 +21,9 @@ export default function Home({ allPostsData }) {
     </Grid>
 
     {/* Latest Recipe Cards */}
-
     <LastetRecipes posts={allPostsData} />
 
+    <AllRecipes posts={allPostsData}/>
 
     {/* <div className={styles.container}>
 
