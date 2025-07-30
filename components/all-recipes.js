@@ -46,9 +46,10 @@ const css = {
         margin: '20px 50px 20px 50px',
         rowGap: '20px',
         columnGap: '20px',
-        border: '1px solid #222',
+        border: '1px solid #dddddd',
         justifyContent: 'center',
         padding: '20px',
+        background: '#F5F5F5'
     },
 
     recipeInfo: {

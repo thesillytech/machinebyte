@@ -61,7 +61,6 @@ const css = {
   Container: {
     '&.MuiContainer-root': {
       padding: 0,
-      margin: 0,
       maxWidth: 'xl'
     }
   },
