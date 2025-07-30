@@ -13,7 +13,7 @@ const allRecipes = ({ posts }) => {
     const getLastestPosts = posts.slice(0,4)
     return (
         <Grid container spacing={3} sx={css.recipeCards}>
-            <Grid size={{ xs: 4, sm: 4, md: 2, lg: 1 }} sx={css.recipeInfo}>
+            <Grid size={{ xs: 12, sm: 8, md: 2, lg: 1 }} sx={css.recipeInfo}>
                 <Typography variant="h5" component="div" sx={css.infoText}>
                     Explore All Recipes
                 </Typography>

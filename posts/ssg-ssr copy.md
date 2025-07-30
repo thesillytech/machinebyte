@@ -1,6 +1,6 @@
 ---
 title: 'Avocado Toast'
-img: 'bowl.webp'
+img: 'cucumber.jpg'
 date: '2020-01-02'
 ---
  

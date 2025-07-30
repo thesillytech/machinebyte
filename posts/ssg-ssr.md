@@ -1,6 +1,6 @@
 ---
 title: 'Butter Chicken'
-img: 'bowl.webp'
+img: 'cake.jpg'
 date: '2020-01-02'
 ---
  

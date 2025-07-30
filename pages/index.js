@@ -10,20 +10,22 @@ import Grid from '@mui/material/Grid';
 export default function Home({ allPostsData }) {
   return (
     <Container sx={css.Container}>
-    
-    <Header />
 
-    {/* Latest Recipe Banner */}
-    <Grid container spacing={2}>
-      <Grid sx={css.mainBanner} size={12}>
-        <img src="/images/placeholder_banner.jpg" alt="banner" style={css.banner}></img>
+      {/* Header */}
+      <Header />
+
+      {/* Latest Recipe Banner Section*/}
+      <Grid container sx={css.bannerContainer} spacing={2}>
+        <Grid sx={css.bannerGrid} size={12}>
+          <img src="/images/placeholder_banner.jpg" alt="banner" style={css.banner}></img>
+        </Grid>
       </Grid>
-    </Grid>
 
-    {/* Latest Recipe Cards */}
-    <LastetRecipes posts={allPostsData} />
+      {/* Latest Recipe Cards Section*/}
+      <LastetRecipes posts={allPostsData} />
 
-    <AllRecipes posts={allPostsData}/>
+      {/* All Recipe Section */}
+      <AllRecipes posts={allPostsData}/>
 
     {/* <div className={styles.container}>
 
@@ -64,18 +66,19 @@ const css = {
     }
   },
 
-  mainBanner: {
+  bannerContainer: {
+    margin: '20px 50px 20px 50px',
+  },
+
+  bannerGrid: {
     display: 'flex',
-    width: '100%',
-    justifyContent: 'center',
-    margin: '30px',
     height: '40vh',
     overflow: 'hidden'
   },
 
   banner: {
     objectFit: 'cover',
-    width: '1200px'
+    width: '100%'
   },
 
   headingMd: {

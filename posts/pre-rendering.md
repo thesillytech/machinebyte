@@ -1,6 +1,6 @@
 ---
 title: 'Chicken Biryani'
-img: 'pan.jpg'
+img: 'tacos.jpg'
 date: '2020-01-01'
 ---
  
