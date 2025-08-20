@@ -7,6 +7,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import { ArticleIcon } from '@phosphor-icons/react'
 
    
 const latestRecipe = ({ posts }) => {
@@ -16,7 +17,10 @@ const latestRecipe = ({ posts }) => {
         <>
             <Box sx={css.headers}>
                 <Divider sx={css.divider} />
-                <Typography sx={css.text}>Latest Recipes</Typography>
+                <Grid>
+                    <Typography sx={css.text}>Most Recent</Typography>
+                    <ArticleIcon size={32} />
+                </Grid>
             </Box>
 
             <Grid container spacing={3} sx={css.recipeCards}>
@@ -46,7 +50,7 @@ export default latestRecipe
 const css = {
     headers: {
         margin: '30px 50px 30px 50px',
-        textAlign: 'center'
+        // textAlign: 'center'
     }, 
 
     divider: {
@@ -58,7 +62,6 @@ const css = {
         fontSize: '60px',
         fontWeight: '500',
         fontFamily: 'Comic Neue, Roboto',
-        color: ''
     }, 
 
     recipeCards: {

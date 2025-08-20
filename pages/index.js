@@ -15,11 +15,11 @@ export default function Home({ allPostsData }) {
       <Header />
 
       {/* Latest Recipe Banner Section*/}
-      <Grid container sx={css.bannerContainer} spacing={2}>
+      {/* <Grid container sx={css.bannerContainer} spacing={2}>
         <Grid sx={css.bannerGrid} size={12}>
           <img src="/images/placeholder_banner.jpg" alt="banner" style={css.banner}></img>
         </Grid>
-      </Grid>
+      </Grid> */}
 
       {/* Latest Recipe Cards Section*/}
       <LastetRecipes posts={allPostsData} />

@@ -25,13 +25,12 @@ const header = () => {
         <>
             {/* Desktop Menu */}
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={css.appbar}>
+                <AppBar position="static" sx={css.appBar}>
                     <Toolbar>
-                        <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/>
+                        {/* <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/> */}
                         <Box sx={{ flexGrow: 1 }}></Box>
-                        <Link href="/recipes"><Button color="inherit" sx={css.headerLinks}>Recipes</Button></Link>
-                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>About</Button></Link>
-                        <Link href="/socials"><Button color="inherit" sx={css.headerLinks}>Socials</Button></Link>
+                        <Link href="/recipes"><Button color="inherit" sx={css.headerLinks}>Electronics</Button></Link>
+                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Gaming</Button></Link>
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -64,8 +63,8 @@ const header = () => {
                     },
                     }}
                 >
-                    <Link href="/recipes"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Recipes</MenuItem></Link>
-                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>About</MenuItem></Link>
+                    <Link href="/recipes"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Electronics</MenuItem></Link>
+                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Gaming</MenuItem></Link>
                     <Link href="/socials"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Socials</MenuItem></Link>
                 </Menu>
                 </Toolbar>
@@ -77,10 +76,10 @@ const header = () => {
 export default header
 
 const css = {
-    appbar: {
-        background: '#0B1E47',
+    appBar: {
+        background: '#222222',
         color: '#E2E8F0',
-        padding: '10px',
+        borderBottom: '1px solid #F5F5F5',
         '@media screen and (max-width:768px)': { 
             display: 'none'
         }
