@@ -2,7 +2,7 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import Header from '../components/header'
-import LastetRecipes from '../components/latest-recipes'
+import LatestArticles from '../components/latest-articles'
 import AllRecipes from '../components/all-recipes';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
       </Grid> */}
 
       {/* Latest Recipe Cards Section*/}
-      <LastetRecipes posts={allPostsData} />
+      <LatestArticles posts={allPostsData} />
 
       {/* All Recipe Section */}
       <AllRecipes posts={allPostsData}/>

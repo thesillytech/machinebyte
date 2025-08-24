@@ -7,20 +7,22 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import { ArticleIcon } from '@phosphor-icons/react'
+import { ArticleIcon, ArrowSquareOutIcon  } from '@phosphor-icons/react'
 
    
-const latestRecipe = ({ posts }) => {
+const latestArticles = ({ posts }) => {
 
     const getLastestPosts = posts.slice(0,4)
     return (
         <>
             <Box sx={css.headers}>
-                <Divider sx={css.divider} />
-                <Grid>
+                <Grid container spacing={1} sx={{ alignItems: 'center' }}>
+                    <Box sx={css.icon}>
+                        <ArticleIcon weight="fill" />
+                    </Box>
                     <Typography sx={css.text}>Most Recent</Typography>
-                    <ArticleIcon size={32} />
                 </Grid>
+                <Divider sx={css.divider} />
             </Box>
 
             <Grid container spacing={3} sx={css.recipeCards}>
@@ -32,25 +34,29 @@ const latestRecipe = ({ posts }) => {
                                 image={`/images/recipe-cards/${post.img}`}
                                 title="green iguana"
                             />
-                            <CardContent sx={{ background: '#222' }}>
+                            {/* <CardContent sx={{ alignItems: 'center' }}>
                                 <Typography variant="h5" component="div" sx={css.cardText}>
                                     {post.title} 
                                 </Typography>
-                            </CardContent>
+                            </CardContent> */}
+                            <Typography variant="h5" component="div" sx={css.cardText}>
+                                {post.title} 
+                            </Typography>
+                            <ArrowSquareOutIcon size={32} weight="fill" />
                         </Card>
                     </Grid>
+                   
                 ))}
             </Grid>
         </>
     )
 }
 
-export default latestRecipe
+export default latestArticles
 
 const css = {
     headers: {
         margin: '30px 50px 30px 50px',
-        // textAlign: 'center'
     }, 
 
     divider: {
@@ -59,10 +65,23 @@ const css = {
 
     text: {
         marginTop: '5px',
-        fontSize: '60px',
+        fontSize: '38px',
         fontWeight: '500',
         fontFamily: 'Comic Neue, Roboto',
+
+        '@media screen and (max-width:768px)': { 
+            fontSize: '24px',
+        }
     }, 
+
+    icon: {
+        display: 'flex',
+        fontSize: '44px', 
+
+        '@media screen and (max-width:768px)': { 
+            fontSize: '30px',
+        }
+    },
 
     recipeCards: {
         margin: '20px 50px 20px 50px',
@@ -78,8 +97,8 @@ const css = {
 
     cardText: {
         fontFamily: 'Comic Neue, Roboto',
-        color: '#F5F5F5',
+        color: '#222222',
         fontSize: '24px',
-        textAlign: 'center'
+        // textAlign: 'center'
     }
 }
