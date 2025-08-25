@@ -4,6 +4,7 @@ import Date from '../components/date';
 import Header from '../components/header'
 import LatestArticles from '../components/latest-articles'
 import AllRecipes from '../components/all-recipes';
+import ExploreCategories from '../components/explore-categories'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
@@ -14,18 +15,14 @@ export default function Home({ allPostsData }) {
       {/* Header */}
       <Header />
 
-      {/* Latest Recipe Banner Section*/}
-      {/* <Grid container sx={css.bannerContainer} spacing={2}>
-        <Grid sx={css.bannerGrid} size={12}>
-          <img src="/images/placeholder_banner.jpg" alt="banner" style={css.banner}></img>
-        </Grid>
-      </Grid> */}
-
-      {/* Latest Recipe Cards Section*/}
+      {/* Latest Articles Cards Section*/}
       <LatestArticles posts={allPostsData} />
+      
+      {/* Explore by Categories Section */}
+      <ExploreCategories posts={allPostsData}/>
 
       {/* All Recipe Section */}
-      <AllRecipes posts={allPostsData}/>
+      {/* <AllRecipes posts={allPostsData}/> */}
 
     {/* <div className={styles.container}>
 

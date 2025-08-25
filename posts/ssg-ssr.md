@@ -1,5 +1,6 @@
 ---
 title: 'Butter Chicken'
+category: 'chicken'
 img: 'cake.jpg'
 date: '2020-01-02'
 ---

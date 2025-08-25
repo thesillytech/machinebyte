@@ -1,5 +1,6 @@
 ---
 title: 'Chicken Fried Rice'
+category: 'chicken'
 img: 'pan.jpg'
 date: '2020-01-01'
 ---

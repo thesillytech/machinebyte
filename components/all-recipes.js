@@ -61,7 +61,7 @@ const css = {
 
     infoText: {
         textAlign: 'center',
-        fontFamily: 'Comic Neue, Roboto',
+        fontFamily: 'josefin sans, Roboto',
         color: '#222',
         fontWeight: 600
     },
@@ -72,7 +72,7 @@ const css = {
     },
 
     cardText: {
-        fontFamily: 'Comic Neue, Roboto',
+        fontFamily: 'josefin sans, Roboto',
         color: '#F5F5F5',
         fontSize: '16px',
         textAlign: 'center'

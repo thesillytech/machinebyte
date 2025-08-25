@@ -1,5 +1,6 @@
 ---
 title: 'Chicken Biryani'
+category: 'chicken'
 img: 'tacos.jpg'
 date: '2020-01-01'
 ---

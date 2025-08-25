@@ -4,9 +4,7 @@ import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import { ArticleIcon, ArrowSquareOutIcon  } from '@phosphor-icons/react'
 
    
@@ -25,7 +23,7 @@ const latestArticles = ({ posts }) => {
                 <Divider sx={css.divider} />
             </Box>
 
-            <Grid container spacing={3} sx={css.recipeCards}>
+            <Grid container spacing={3} sx={css.latestPosts}>
                 {getLastestPosts.map((post) => (
                     <Grid key={post.id} size={{ xs: 12, sm:6, md: 4, lg: 3 }}>
                         <Card>
@@ -34,18 +32,18 @@ const latestArticles = ({ posts }) => {
                                 image={`/images/recipe-cards/${post.img}`}
                                 title="green iguana"
                             />
-                            {/* <CardContent sx={{ alignItems: 'center' }}>
-                                <Typography variant="h5" component="div" sx={css.cardText}>
-                                    {post.title} 
-                                </Typography>
-                            </CardContent> */}
-                            <Typography variant="h5" component="div" sx={css.cardText}>
-                                {post.title} 
-                            </Typography>
-                            <ArrowSquareOutIcon size={32} weight="fill" />
                         </Card>
+                         <Grid container sx={css.articleTitle}>
+                            <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                                <p style={css.cardText}>
+                                    {post.title} 
+                                </p>
+                            </Box>
+                            <Box sx={{ display: 'flex' }}>
+                                <ArrowSquareOutIcon size={18} weight="fill" />
+                            </Box>
+                        </Grid>
                     </Grid>
-                   
                 ))}
             </Grid>
         </>
@@ -60,14 +58,14 @@ const css = {
     }, 
 
     divider: {
-        border: '1px solid'
+        border: '1px solid',
     },
 
     text: {
         marginTop: '5px',
         fontSize: '38px',
         fontWeight: '500',
-        fontFamily: 'Comic Neue, Roboto',
+        fontFamily: 'josefin sans, Roboto',
 
         '@media screen and (max-width:768px)': { 
             fontSize: '24px',
@@ -83,7 +81,7 @@ const css = {
         }
     },
 
-    recipeCards: {
+    latestPosts: {
         margin: '20px 50px 20px 50px',
         rowGap: '20px',
         columnGap: '20px',
@@ -96,9 +94,17 @@ const css = {
     },
 
     cardText: {
-        fontFamily: 'Comic Neue, Roboto',
+        fontFamily: 'josefin sans, Roboto',
         color: '#222222',
-        fontSize: '24px',
-        // textAlign: 'center'
+        fontSize: '20px',
+        fontWeight: 600,
+        padding: 0,
+        margin: 0
+    }, 
+    
+    articleTitle: {
+        alignItems: 'center',
+        marginTop: '0.5rem',
+        lineHeight: '1.5rem',
     }
 }
