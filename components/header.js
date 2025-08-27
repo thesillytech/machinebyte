@@ -29,8 +29,9 @@ const header = () => {
                     <Toolbar>
                         {/* <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/> */}
                         <Box sx={{ flexGrow: 1 }}></Box>
-                        <Link href="/recipes"><Button color="inherit" sx={css.headerLinks}>Electronics</Button></Link>
-                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Gaming</Button></Link>
+                        <Link href="/recipes"><Button color="inherit" sx={css.headerLinks}>Tech</Button></Link>
+                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Anime</Button></Link>
+                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Socials</Button></Link>
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -63,8 +64,8 @@ const header = () => {
                     },
                     }}
                 >
-                    <Link href="/recipes"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Electronics</MenuItem></Link>
-                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Gaming</MenuItem></Link>
+                    <Link href="/recipes"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Tech</MenuItem></Link>
+                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Anime</MenuItem></Link>
                     <Link href="/socials"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Socials</MenuItem></Link>
                 </Menu>
                 </Toolbar>

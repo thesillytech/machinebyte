@@ -2,12 +2,9 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import { NoteIcon  } from '@phosphor-icons/react'
 import Button from '@mui/material/Button';
+import Link from 'next/link'
    
 const exploreCategories = ({ posts }) => {
 
@@ -27,7 +24,9 @@ const exploreCategories = ({ posts }) => {
                     </Grid>
                      <Grid sx={css.recipeCards}>
                         {postsCategory.map((category) => (
-                            <Button variant="contained" sx={css.categoryButtons}>{category}</Button>
+                            <Link href="/category/[category].js">
+                                <Button variant="contained" sx={css.categoryButtons}>{category}</Button>
+                            </Link>
                         ))}
                             <Button variant="contained" sx={css.categoryButtons}>category</Button>
                             <Button variant="contained" sx={css.categoryButtons}>category</Button>

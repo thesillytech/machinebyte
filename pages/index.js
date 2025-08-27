@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Date from '../components/date';
 import Header from '../components/header'
 import LatestArticles from '../components/latest-articles'
-import AllRecipes from '../components/all-recipes';
+import TechCategory from '../components/tech-category';
+import AnimeCategory from '../components/anime-category';
 import ExploreCategories from '../components/explore-categories'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -22,9 +23,12 @@ export default function Home({ allPostsData }) {
       <ExploreCategories posts={allPostsData}/>
 
       {/* All Recipe Section */}
-      {/* <AllRecipes posts={allPostsData}/> */}
+      <TechCategory posts={allPostsData}/>
 
-    {/* <div className={styles.container}>
+      {/* All Recipe Section */}
+      <AnimeCategory posts={allPostsData}/>
+
+      {/* <div className={styles.container}>
 
       <section sx={css.headingMd}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
