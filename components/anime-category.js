@@ -21,13 +21,13 @@ const animeCategory = ({ posts }) => {
 
             {getLastestPosts.map((post) => (
                 <Grid key={post.id} size={{ xs: 8, sm:4, md: 2, lg: 2 }}>
-                    <Card>
+                    <Card sx={{ '&.MuiPaper-root': {background: 'none'}}}>
                         <CardMedia
                             sx={css.cardImage}
                             image={`/images/recipe-cards/${post.img}`}
                             title="green iguana"
                         />
-                        <CardContent sx={{ background: '#222' }}>
+                        <CardContent sx={css.cardContent}>
                             <Typography variant="h5" component="div" sx={css.cardText}>
                                 {post.title} 
                             </Typography>
@@ -49,7 +49,7 @@ const css = {
         border: '1px solid #dddddd',
         justifyContent: 'center',
         padding: '20px',
-        background: '#F5F5F5'
+        background: '#0E1344'
     },
 
     recipeInfo: {
@@ -62,13 +62,21 @@ const css = {
     infoText: {
         textAlign: 'center',
         fontFamily: 'josefin sans, Roboto',
-        color: '#222222 ',
+        color: '#F5F5F5 ',
         fontWeight: 600
     },
     
     cardImage: {
         width: '100%', 
         height: '120px',
+    },
+
+    cardContent: {
+        background: '#153461',
+
+        '&.MuiCardContent-root': {
+            padding: '15px'
+        }
     },
 
     cardText: {

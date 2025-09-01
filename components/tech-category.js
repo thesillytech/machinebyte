@@ -21,13 +21,13 @@ const techCategory = ({ posts }) => {
 
             {getLastestPosts.map((post) => (
                 <Grid key={post.id} size={{ xs: 8, sm:4, md: 2, lg: 2 }}>
-                    <Card>
+                    <Card sx={{ '&.MuiPaper-root': {background: 'none'}}}>
                         <CardMedia
                             sx={css.cardImage}
                             image={`/images/recipe-cards/${post.img}`}
                             title="green iguana"
                         />
-                        <CardContent sx={{ background: '#222' }}>
+                        <CardContent sx={css.cardContent}>
                             <Typography variant="h5" component="div" sx={css.cardText}>
                                 {post.title} 
                             </Typography>
@@ -69,6 +69,14 @@ const css = {
     cardImage: {
         width: '100%', 
         height: '120px',
+    },
+
+    cardContent: {
+        background: '#2f2d2dff',
+
+        '&.MuiCardContent-root': {
+            padding: '15px'
+        }
     },
 
     cardText: {
