@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'; 
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -9,7 +9,7 @@ import { Toolbar } from '@mui/material';
 import { ListIcon } from "@phosphor-icons/react";
 import Link from 'next/link'
 
-const header = () => {
+const header = ({ posts }) => {
 
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)
@@ -29,7 +29,8 @@ const header = () => {
                     <Toolbar>
                         {/* <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/> */}
                         <Box sx={{ flexGrow: 1 }}></Box>
-                        <Link href="/recipes"><Button color="inherit" sx={css.headerLinks}>Tech</Button></Link>
+                        <Link href="/"><Button color="inherit" sx={css.headerLinks}>Home</Button></Link>
+                        <Link href={{ pathname: '/tech', query: {posts: posts}}}><Button color="inherit" sx={css.headerLinks}>Tech</Button></Link>
                         <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Anime</Button></Link>
                         <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Socials</Button></Link>
                     </Toolbar>
@@ -64,7 +65,8 @@ const header = () => {
                     },
                     }}
                 >
-                    <Link href="/recipes"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Tech</MenuItem></Link>
+                    <Link href="/" ><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Home</MenuItem></Link>
+                    <Link href="/tech"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Tech</MenuItem></Link>
                     <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Anime</MenuItem></Link>
                     <Link href="/socials"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Socials</MenuItem></Link>
                 </Menu>
@@ -110,7 +112,7 @@ const css = {
 
     burgerMenu: {
         display: 'none',
-        background: '#0B1E47',
+        background: '#222222',
         color: '#E2E8F0',
         padding: '10px',
         '@media screen and (max-width:768px)': { 

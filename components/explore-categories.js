@@ -22,7 +22,7 @@ const exploreCategories = ({ posts }) => {
                         <p style={css.text}>Explore By</p>
                         <p style={css.text}>Categories</p>
                     </Grid>
-                     <Grid sx={css.recipeCards}>
+                     <Grid>
                         {postsCategory.map((category) => (
                             <Link href="/category/[category].js">
                                 <Button variant="contained" sx={css.categoryButtons}>{category}</Button>

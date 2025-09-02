@@ -14,7 +14,7 @@ export default function Home({ allPostsData }) {
     <Container sx={css.Container}>
 
       {/* Header */}
-      <Header />
+      <Header posts={allPostsData} />
 
       {/* Latest Articles Cards Section*/}
       <LatestArticles posts={allPostsData} />
