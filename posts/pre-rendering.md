@@ -1,7 +1,8 @@
 ---
-title: 'Chicken Biryani'
-category: 'chicken'
-img: 'tacos.jpg'
+title: 'Porsche 911'
+category: 'tech'
+subcategory: 'mobile'
+img: 'porsche911.jpg'
 date: '2020-01-01'
 ---
  

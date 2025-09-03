@@ -1,7 +1,8 @@
 ---
-title: 'Avocado Toast'
-category: 'bread'
-img: 'cucumber.jpg'
+title: 'One Piece'
+category: 'anime'
+subcategory: 'one piece'
+img: 'onepiece.jpg'
 date: '2020-01-02'
 ---
  

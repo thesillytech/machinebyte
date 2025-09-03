@@ -29,7 +29,7 @@ const latestArticles = ({ posts }) => {
                         <Card>
                             <CardMedia
                                 sx={css.cardImage}
-                                image={`/images/recipe-cards/${post.img}`}
+                                image={`/images/${post.category === 'tech' ? 'tech' : 'anime'}/${post.img}`}
                                 title="green iguana"
                             />
                         </Card>

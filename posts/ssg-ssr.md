@@ -1,7 +1,8 @@
 ---
-title: 'Butter Chicken'
-category: 'chicken'
-img: 'cake.jpg'
+title: 'Attack on Titan'
+category: 'anime'
+subcategory: 'cartoon'
+img: 'attackontitan.jpg'
 date: '2020-01-02'
 ---
  

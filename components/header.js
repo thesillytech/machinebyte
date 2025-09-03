@@ -30,9 +30,9 @@ const header = ({ posts }) => {
                         {/* <Avatar alt="Logo" src="/images/logo/logo-5.png" variant="square" sx={css.logo}/> */}
                         <Box sx={{ flexGrow: 1 }}></Box>
                         <Link href="/"><Button color="inherit" sx={css.headerLinks}>Home</Button></Link>
-                        <Link href={{ pathname: '/tech', query: {posts: posts}}}><Button color="inherit" sx={css.headerLinks}>Tech</Button></Link>
-                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Anime</Button></Link>
-                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>Socials</Button></Link>
+                        <Link href="/tech"><Button color="inherit" sx={css.headerLinks}>Tech</Button></Link>
+                        <Link href="/anime"><Button color="inherit" sx={css.headerLinks}>Anime</Button></Link>
+                        <Link href="/about"><Button color="inherit" sx={css.headerLinks}>About</Button></Link>
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -67,8 +67,8 @@ const header = ({ posts }) => {
                 >
                     <Link href="/" ><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Home</MenuItem></Link>
                     <Link href="/tech"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Tech</MenuItem></Link>
-                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Anime</MenuItem></Link>
-                    <Link href="/socials"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Socials</MenuItem></Link>
+                    <Link href="/anime"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Anime</MenuItem></Link>
+                    <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>About</MenuItem></Link>
                 </Menu>
                 </Toolbar>
             </Box>

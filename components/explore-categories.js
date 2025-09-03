@@ -8,8 +8,7 @@ import Link from 'next/link'
    
 const exploreCategories = ({ posts }) => {
 
-    const postsCategory = posts.filter((post, index, array) => array.findIndex(p => p.category === post.category) === index)
-        .map(post => post.category)
+    const postsSubCategory = posts.filter((post, index, array) => array.findIndex(p => p.subcategory === post.subcategory) === index).map(post => post.subcategory)
 
     return (
         <>
@@ -23,9 +22,9 @@ const exploreCategories = ({ posts }) => {
                         <p style={css.text}>Categories</p>
                     </Grid>
                      <Grid>
-                        {postsCategory.map((category) => (
-                            <Link href="/category/[category].js">
-                                <Button variant="contained" sx={css.categoryButtons}>{category}</Button>
+                        {postsSubCategory.map((subCategory) => (
+                            <Link href={{ pathname: '/category', query: { name: subCategory}}}>
+                                <Button variant="contained" sx={css.categoryButtons}>{subCategory}</Button>
                             </Link>
                         ))}
                             <Button variant="contained" sx={css.categoryButtons}>category</Button>

@@ -24,7 +24,7 @@ const techCategory = ({ posts }) => {
                     <Card sx={{ '&.MuiPaper-root': {background: 'none'}}}>
                         <CardMedia
                             sx={css.cardImage}
-                            image={`/images/recipe-cards/${post.img}`}
+                            image={`/images/tech/${post.img}`}
                             title="green iguana"
                         />
                         <CardContent sx={css.cardContent}>

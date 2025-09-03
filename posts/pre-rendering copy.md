@@ -1,7 +1,8 @@
 ---
-title: 'Chicken Fried Rice'
-category: 'chicken'
-img: 'pan.jpg'
+title: 'Google Pixel 10'
+category: 'tech'
+subcategory: 'mobile'
+img: 'pixel10.jpg'
 date: '2020-01-01'
 ---
  

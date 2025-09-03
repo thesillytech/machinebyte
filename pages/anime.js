@@ -13,7 +13,7 @@ import { getSortedPostsData } from '../lib/posts';
 
 export default function tech ({ allPostsData }) {
 
-    const techCategory = allPostsData.filter((post) => post.category === 'tech')
+    const techCategory = allPostsData.filter((post) => post.category === 'anime')
 
     return (
         <Container sx={css.Container}>
@@ -23,7 +23,7 @@ export default function tech ({ allPostsData }) {
 
             <Box sx={css.headers}>
                 <Grid container spacing={3} sx={{ alignItems: 'flex-end' }}>
-                    <Grid size={{ xs: 12, sm:4, md: 2, lg: 2 }}>
+                    <Grid size={{ xs: 12, sm:4, md: 3, lg: 3 }}>
                         <Typography sx={css.text}>TECH</Typography>
                     </Grid>
                     <Grid sx={css.divider}></Grid>
@@ -36,7 +36,7 @@ export default function tech ({ allPostsData }) {
                         <Card>
                             <CardMedia
                                 sx={css.cardImage}
-                                image={`/images/tech/${post.img}`}
+                                image={`/images/anime/${post.img}`}
                                 title={`${post.img}`}
                             />
                         </Card>
