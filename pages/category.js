@@ -11,6 +11,10 @@ const category = ({ allPostsData }) => {
     const router = useRouter()
     const { name } = router.query
 
+    const techCategory = allPostsData.filter((post) => post.subcategory === name)
+
+    console.log('whaaat',name)
+
     return (
         <Container sx={css.Container}>
 
@@ -30,7 +34,9 @@ const category = ({ allPostsData }) => {
                 <Grid size={{ xs: 5, sm: 5, md: 4, lg: 3 }}>
                     <img src="/images/anime/onepiece.jpg"  />
                 </Grid>
-                <Grid size={{ xs: 5, sm: 5, md: 6, lg: 4 }}>Content</Grid>
+                <Grid size={{ xs: 5, sm: 5, md: 6, lg: 4 }}>
+                    <Typography sx={css.text}>EXPLORE BY {name}</Typography>
+                </Grid>
             </Grid>
         
         </Container>
