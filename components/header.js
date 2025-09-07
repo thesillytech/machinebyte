@@ -9,7 +9,7 @@ import { Toolbar } from '@mui/material';
 import { ListIcon } from "@phosphor-icons/react";
 import Link from 'next/link'
 
-const header = ({ posts }) => {
+const header = () => {
 
     const [anchorEl, setAnchorEl] = React.useState(null)
     const open = Boolean(anchorEl)

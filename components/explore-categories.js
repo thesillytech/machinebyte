@@ -5,16 +5,17 @@ import Divider from '@mui/material/Divider';
 import { NoteIcon  } from '@phosphor-icons/react'
 import Button from '@mui/material/Button';
 import Link from 'next/link'
+import useStore from '../components/state/store'
    
-const exploreCategories = ({ posts }) => {
+const exploreCategories = () => {
 
-    const postsSubCategory = posts.filter((post, index, array) => array.findIndex(p => p.subcategory === post.subcategory) === index).map(post => post.subcategory)
+    const postSubCategory = useStore((state) => state.getPostData()).filter((post, index, array) => array.findIndex(p => p.subcategory === post.subcategory) === index).map(post => post.subcategory)
 
     return (
         <>
             <Box sx={css.headers}>
                 <Grid container spacing={1} sx={{ alignItems: 'center', marginBottom: '9px' }}>
-                    <Box sx={css.icon}>
+                    <Box sx={css.icon}> 
                         <NoteIcon weight="fill" />
                     </Box>
                     <Grid>
@@ -22,9 +23,9 @@ const exploreCategories = ({ posts }) => {
                         <p style={css.text}>Categories</p>
                     </Grid>
                      <Grid>
-                        {postsSubCategory.map((subCategory) => (
-                            <Link href={{ pathname: '/category', query: { name: subCategory}}}>
-                                <Button variant="contained" sx={css.categoryButtons}>{subCategory}</Button>
+                        {postSubCategory.map((subCategory) => (
+                            <Link key={subCategory} href={{ pathname: '/category', query: { name: subCategory}}}>
+                                <Button key={subCategory} variant="contained" sx={css.categoryButtons}>{subCategory}</Button>
                             </Link>
                         ))}
                             <Button variant="contained" sx={css.categoryButtons}>category</Button>

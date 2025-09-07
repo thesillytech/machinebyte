@@ -6,11 +6,13 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { ArticleIcon, ArrowSquareOutIcon  } from '@phosphor-icons/react'
+import useStore from '../components/state/store'
 
    
-const latestArticles = ({ posts }) => {
+const latestArticles = () => {
 
-    const getLastestPosts = posts.slice(0,4)
+    const getLastestPosts = useStore((state) => state.getPostData()).slice(0,4)
+
     return (
         <>
             <Box sx={css.headers}>

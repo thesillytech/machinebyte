@@ -1,16 +1,16 @@
-import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Link from 'next/link'
+import useStore from '../components/state/store'
 
-const techCategory = ({ posts }) => {
+const techCategory = () => {
 
-    const getLastestPosts = posts.slice(0,4)
+    // get latest tech posts by category
+    const getPostByCategory = useStore((state) => state.getPostByCategory)
+    const getLastestPosts = getPostByCategory('tech').slice(0,4)
+
     return (
         <Grid container spacing={3} sx={css.recipeCards}>
             <Grid size={{ xs: 12, sm: 8, md: 2, lg: 1 }} sx={css.recipeInfo}>
