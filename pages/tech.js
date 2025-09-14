@@ -6,16 +6,15 @@ import Box from '@mui/material/Box';
 import { ArticleIcon, ArrowSquareOutIcon, NoteIcon  } from '@phosphor-icons/react'
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import useStore from '../components/state/store';
 import { getSortedPostsData } from '../lib/posts';
-import useStore from '../components/state/store'
+import InitilizedData from '../utility/hook/useInitializedData';
 
-export default function tech () {
-
-    // get all tech posts by category
-    const getPostByCategory = useStore((state) => state.getPostData())
-    // const getLastestPosts = getPostByCategory('tech').slice(0,4)
-
-    console.log('???', getPostByCategory)
+const tech = ({ allPostsData }) => {
+    InitilizedData(allPostsData)
+    
+    const getPostByCategory = useStore((state) => state.getPostByCategory)
+    const techPosts = getPostByCategory('tech')
 
     return (
         <Container sx={css.Container}>
@@ -32,8 +31,8 @@ export default function tech () {
                 </Grid>
             </Box>
 
-            {/* <Grid container spacing={3} sx={css.latestPosts}>
-                {getPostByCategory.map((post) => (
+            <Grid container spacing={3} sx={css.latestPosts}>
+                {techPosts.map((post) => (
                     <Grid key={post.id} size={{ xs: 12, sm:6, md: 4, lg: 3 }}>
                         <Card>
                             <CardMedia
@@ -54,12 +53,12 @@ export default function tech () {
                         </Grid>
                     </Grid>
                 ))}
-            </Grid> */}
-            
-
+            </Grid>
         </Container>
     )
 }
+
+export default tech
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();

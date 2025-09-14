@@ -8,23 +8,12 @@ import AnimeCategory from '../components/anime-category';
 import ExploreCategories from '../components/explore-categories'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { useEffect } from 'react';
-import useStore from '../components/state/store'
+import InitilizedData from '../utility/hook/useInitializedData';
 
 export default function Home({ allPostsData }) {
 
-  const blogPosts = useStore((state) => state.blogPosts)
-  const isInitialized = useStore((state) => state.isInitialized)
-
-  // console.log('Is Initilaized', isInitialized)
-
-  useEffect(() => {
-    if(!isInitialized && allPostsData?.length > 0) {
-      console.log('Grab Initial Data')
-      blogPosts(allPostsData)
-    }
-  }, [allPostsData, blogPosts])
-
+  InitilizedData(allPostsData)
+  
   return (
     <Container sx={css.Container}>
 

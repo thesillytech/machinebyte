@@ -4,16 +4,18 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { ArticleIcon, ArrowSquareOutIcon, NoteIcon  } from '@phosphor-icons/react'
-import Divider from '@mui/material/Divider';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import { getSortedPostsData } from '../lib/posts';
+import InitilizedData from '../utility/hook/useInitializedData';
+import useStore from '../components/state/store';
 
+const anime = ({ allPostsData }) => {
 
-export default function tech ({ allPostsData }) {
-
-    const techCategory = allPostsData.filter((post) => post.category === 'anime')
+    InitilizedData(allPostsData)
+    
+    const getPostByCategory = useStore((state) => state.getPostByCategory)
+    const animePosts = getPostByCategory('anime')
 
     return (
         <Container sx={css.Container}>
@@ -24,14 +26,14 @@ export default function tech ({ allPostsData }) {
             <Box sx={css.headers}>
                 <Grid container spacing={3} sx={{ alignItems: 'flex-end' }}>
                     <Grid size={{ xs: 12, sm:4, md: 3, lg: 3 }}>
-                        <Typography sx={css.text}>TECH</Typography>
+                        <Typography sx={css.text}>ANIME</Typography>
                     </Grid>
                     <Grid sx={css.divider}></Grid>
                 </Grid>
             </Box>
 
             <Grid container spacing={3} sx={css.latestPosts}>
-                {techCategory.map((post) => (
+                {animePosts.map((post) => (
                     <Grid key={post.id} size={{ xs: 12, sm:6, md: 4, lg: 3 }}>
                         <Card>
                             <CardMedia
@@ -53,11 +55,11 @@ export default function tech ({ allPostsData }) {
                     </Grid>
                 ))}
             </Grid>
-            
-
         </Container>
     )
 }
+
+export default anime
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
