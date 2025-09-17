@@ -31,7 +31,7 @@ const header = () => {
                         <Box sx={{ flexGrow: 1 }}></Box>
                         <Link href="/"><Button color="inherit" sx={css.headerLinks}>Home</Button></Link>
                         <Link href="/tech"><Button color="inherit" sx={css.headerLinks}>Tech</Button></Link>
-                        <Link href="/anime"><Button color="inherit" sx={css.headerLinks}>Anime</Button></Link>
+                        <Link href="/science"><Button color="inherit" sx={css.headerLinks}>Science</Button></Link>
                         <Link href="/about"><Button color="inherit" sx={css.headerLinks}>About</Button></Link>
                     </Toolbar>
                 </AppBar>
@@ -67,7 +67,7 @@ const header = () => {
                 >
                     <Link href="/" ><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Home</MenuItem></Link>
                     <Link href="/tech"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Tech</MenuItem></Link>
-                    <Link href="/anime"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Anime</MenuItem></Link>
+                    <Link href="/science"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>Science</MenuItem></Link>
                     <Link href="/about"><MenuItem onClick={handleClose} sx={{ fontWeight: 500}}>About</MenuItem></Link>
                 </Menu>
                 </Toolbar>

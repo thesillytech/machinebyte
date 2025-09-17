@@ -4,7 +4,7 @@ import Date from '../components/date';
 import Header from '../components/header'
 import LatestArticles from '../components/latest-articles'
 import TechCategory from '../components/tech-category';
-import AnimeCategory from '../components/anime-category';
+import ScienceCategory from '../components/science-category';
 import ExploreCategories from '../components/explore-categories'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -30,7 +30,7 @@ export default function Home({ allPostsData }) {
       <TechCategory />
 
       {/* All Recipe Section */}
-      <AnimeCategory />
+      <ScienceCategory />
 
       {/* <div className={styles.container}>
 

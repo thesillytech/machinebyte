@@ -51,7 +51,7 @@ const tech = ({ techPostData }) => {
 
                         <Box sx={{ display: 'flex', flexGrow: 1, marginTop: '20px', margin: 0 }}>
                             <Box style={css.cardText}>
-                                <Box sx={{ marginTop: '20px' }} dangerouslySetInnerHTML={{ __html: post.contentHTML.replace(/<[^>]*>/g, '').split(/\s+/).slice(0, 10).join(' ') + '...' }}  />
+                                <Box sx={{ marginTop: '20px' }} dangerouslySetInnerHTML={{ __html: post.contentHTML.replace(/<[^>]*>/g, '').split(/\s+/).slice(0, 15).join(' ') + '...' }}  />
                             </Box>
                         </Box>
                     </Grid>
@@ -123,6 +123,7 @@ const css = {
      
     cardText: {
         fontFamily: 'josefin sans, Roboto',
+        // color: '#222222',
         fontSize: '20px',
         fontWeight: 600,
         padding: 0,

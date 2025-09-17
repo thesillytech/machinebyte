@@ -3,9 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import useStore from '../components/state/store'
+import useStore from './state/store'
 
-const animeCategory = () => {
+const scienceCategory = () => {
 
     // get latest anime posts by category
     const getPostByCategory = useStore((state) => state.getPostByCategory)
@@ -15,7 +15,7 @@ const animeCategory = () => {
         <Grid container spacing={3} sx={css.recipeCards}>
             <Grid size={{ xs: 12, sm: 8, md: 2, lg: 1 }} sx={css.recipeInfo}>
                 <Typography variant="h5" component="div" sx={css.infoText}>
-                    Explore By Anime
+                    Explore By Science
                 </Typography>
             </Grid>
 
@@ -39,7 +39,7 @@ const animeCategory = () => {
     )
 }
 
-export default animeCategory
+export default scienceCategory
 
 const css = {
     recipeCards: {
